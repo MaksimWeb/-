@@ -1,7 +1,9 @@
 :root {
     --text-color: #333;
     --link-color: #fff;
-    --hover: rgb(255, 217, 0);
+    --hover:  #C283F3;
+    --active: #9D5CD0;
+    --dark-active: #7943A4;
 }
 
 @font-face {
@@ -48,7 +50,7 @@ h1, ul, p {
     padding: 0;
 }
 
-ul, a {
+ul, a, div {
     text-decoration: none;
     list-style-type: none;
     outline: none;
@@ -116,19 +118,20 @@ body {
     color: var(--hover);
 }
 
+.nav__link:focus {
+    border: 2px solid #7943A4;
+}
+
+.nav__link:active {
+    color: var(--active);
+    border: none;
+}
+
+
 .menu-bottom__item {
     font-size: 18px;
     font-weight: 400;
     color: var(--link-color);
-}
-
-.menu-bottom__item::after {
-    content: '';
-    display: inline-block;
-    background: url('../img/Rectangle.svg') no-repeat;
-    background-size: contain;
-    width: 10.07px;
-    height: 7.07px;
 }
 
 .menu-bottom__submenu {
@@ -139,10 +142,6 @@ body {
     transition: .5s ease-in-out;
     position: absolute;
     top: 100%;
-}
-
-.menu-bottom__submenu::-webkit-scrollbar-thumb {
-    background-color: black;
 }
 
 .menu-bottom__submenu a {
@@ -163,13 +162,26 @@ body {
 }
 
 .menu-bottom__item:hover {
-    color: var(--hover);
+    color: var(--active);
     cursor: pointer;
 }
 
-.menu-bottom__item:hover .menu-bottom__submenu {
+.menu-bottom__item:hover > svg > .menu-bottom__icon{
+    stroke: var(--active);
+}
+
+.menu-bottom__submenu_down {
     transform: scaleY(1);
     opacity: 1;
+}
+
+.menu-bottom__item:active {
+    color: var(--dark-active);
+    cursor: pointer;
+}
+
+.menu-bottom__item:active > svg > .menu-bottom__icon{
+    stroke: var(--dark-active);
 }
 
 .nav__upper-item:not(:last-child) {
@@ -177,27 +189,56 @@ body {
 }
 
 .menu-bottom__item:not(:last-child) {
-    margin-right: 98px;
+    margin-right: 95px;
 }
 
 .menu-bottom__item:nth-child(2) {
     margin-right: 98px;
 }
 
+.menu-bottom__icon_rotate {
+    transform: rotate(180deg);
+}
+
+.entrance {
+    margin-right: 8px;
+}
+
+.header__entrance {
+    display: flex;
+    align-items: center;
+    margin: auto 141px auto auto;
+}
+
 .entrance-link {
     font-size: 18px;
     color: var(--link-color);
     font-weight: 400;
-    background: url('../img/Vector.svg') no-repeat;
-    background-size: 13px;
-    background-position: center;
-    margin: auto;
-    padding-left: 81px;
     transition: color .1s ease-in;
 }
 
-.entrance-link:hover {
-    color: var(--hover);
+.entrance__logo {
+    transition: fill .1s ease-in;
+}
+
+.header__entrance:focus-within {
+    border: 2px solid #7943A4;
+}
+
+.header__entrance:hover .entrance-link {
+    color:  var(--hover);
+}
+
+.header__entrance:hover > .entrance > .entrance__logo {
+    fill:  var(--hover);
+}
+
+.header__entrance:active > .entrance > .entrance__logo {
+    fill:  var(--active);
+}
+
+.header__entrance:active .entrance-link {
+    color:  var(--active);
 }
 
 .header__container-bottom {
