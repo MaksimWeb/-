@@ -1,7 +1,7 @@
 :root {
     --text-color: #333;
     --link-color: #fff;
-    --hover:  #C283F3;
+    --hover: #C283F3;
     --active: #9D5CD0;
     --dark-active: #7943A4;
 }
@@ -127,7 +127,6 @@ body {
     border: none;
 }
 
-
 .menu-bottom__item {
     font-size: 18px;
     font-weight: 400;
@@ -166,7 +165,7 @@ body {
     cursor: pointer;
 }
 
-.menu-bottom__item:hover > svg > .menu-bottom__icon{
+.menu-bottom__item:hover>svg>.menu-bottom__icon {
     stroke: var(--active);
 }
 
@@ -175,12 +174,16 @@ body {
     opacity: 1;
 }
 
+.menu-bottom__item:focus-within {
+    outline: 2px solid var(--dark-active);
+}
+
 .menu-bottom__item:active {
     color: var(--dark-active);
     cursor: pointer;
 }
 
-.menu-bottom__item:active > svg > .menu-bottom__icon{
+.menu-bottom__item:active>svg>.menu-bottom__icon {
     stroke: var(--dark-active);
 }
 
@@ -226,19 +229,19 @@ body {
 }
 
 .header__entrance:hover .entrance-link {
-    color:  var(--hover);
+    color: var(--hover);
 }
 
-.header__entrance:hover > .entrance > .entrance__logo {
-    fill:  var(--hover);
+.header__entrance:hover>.entrance>.entrance__logo {
+    fill: var(--hover);
 }
 
-.header__entrance:active > .entrance > .entrance__logo {
-    fill:  var(--active);
+.header__entrance:active>.entrance>.entrance__logo {
+    fill: var(--active);
 }
 
 .header__entrance:active .entrance-link {
-    color:  var(--active);
+    color: var(--active);
 }
 
 .header__container-bottom {
@@ -262,12 +265,13 @@ body {
     margin-right: 143px;
 }
 
-.header__search-input:focus {
-    color: rgb(151, 151, 226);
+.header__search-block:hover .header__search-input {
+    border-bottom: 1px solid var(--hover);
+    cursor: pointer;
 }
 
-.header__search-input:hover {
-    cursor: pointer;
+.header__search-block:hover .search__rect, .header__search-block:hover .search__path {
+    fill: var(--hover);
 }
 
 .header__search-input::placeholder {
