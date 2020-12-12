@@ -235,21 +235,18 @@ body {
     font-weight: 400;
 }
 
-.header__search-input::before {
-    content: '';
-    background: url('../img/search-logo.svg') no-repeat;
-    background-size: contain;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 19%;
-    right: 7.5%;
-}
-
 .simplebar-scrollbar::before {
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 240, 8, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.header__search-block {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    margin-right: 8px;
 }
 
 /* Hero */
