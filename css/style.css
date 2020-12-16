@@ -346,9 +346,12 @@ body {
 }
 
 .hero__link:hover {
-    color: rgb(6, 25, 43);
-    background: rgba(157, 92, 208, .5);
+    border: 3px solid #D1A9F0;
     transform: translateY(-10%);
+}
+
+.hero__link:active {
+    background: #7943A4;
 }
 
 @keyframes anim {
