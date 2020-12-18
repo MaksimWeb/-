@@ -1,3 +1,4 @@
+// Выпадающее меню
 const bottomMenuIcon = Array.from(document.querySelectorAll('.menu-bottom__item'));
 const bottomMenuIconRotation = Array.from(document.querySelectorAll('.svg'));
 const bottomMenuDropDown = Array.from(document.querySelectorAll('.menu-bottom__submenu'));
@@ -13,6 +14,8 @@ bottomMenuIcon.forEach(el => el.addEventListener('click', () => {
     });
 }))
 
+
+// Поле поиска
 const searchInput = document.querySelector('.header__search-input');
 const searchRect = document.querySelector('.search__rect');
 const searchPath = document.querySelector('.search__path');
@@ -21,7 +24,6 @@ searchInput.addEventListener('click', () => {
     searchInput.style.color = "#C283F3";
     searchRect.style.fill = "#C283F3";
     searchPath.style.fill = "#C283F3";
-    console.log('s')
 });
 
 searchInput.addEventListener('input', () => {
@@ -30,3 +32,21 @@ searchInput.addEventListener('input', () => {
         searchPath.style.fill = "white";
     }
 })
+
+// Сслыка войти
+
+const entrance = document.querySelector('.entrance-link');
+const entranceIcon = document.querySelector('.entrance__logo');
+entrance.onmouseover = entrance.onmouseout = (event) => {
+    if (event.type == 'mouseover') {
+        entranceIcon.classList.add('entrance__logo_fill')
+    }
+
+    if (event.type == 'mouseout') {
+        entranceIcon.classList.remove('entrance__logo_fill')
+    }
+};
+
+entrance.addEventListener('mousedown', () => {
+        entranceIcon.classList.add('entrance__logo_active')
+});
