@@ -5,8 +5,11 @@ const bottomMenuDropDown = Array.from(document.querySelectorAll('.menu-bottom__s
 bottomMenuIcon.forEach(el => el.addEventListener('click', () => {
 
     bottomMenuIconRotation.forEach(i => {
-        if (bottomMenuIcon.indexOf(el) == bottomMenuIconRotation.indexOf(i)) {
-            i.classList.toggle('menu-bottom__icon_rotate');
+        if (i.classList.contains("menu-bottom__icon_rotate")) {
+            i.classList.remove("menu-bottom__icon_rotate")
+        }
+        else if (bottomMenuIcon.indexOf(el) == bottomMenuIconRotation.indexOf(i)) {
+            i.classList.add('menu-bottom__icon_rotate');
         }
     });
     bottomMenuDropDown.forEach(n => {
