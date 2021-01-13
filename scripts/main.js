@@ -3,14 +3,19 @@ const bottomMenuIcon = Array.from(document.querySelectorAll('.menu-bottom__item'
 const bottomMenuIconRotation = Array.from(document.querySelectorAll('.svg'));
 const bottomMenuDropDown = Array.from(document.querySelectorAll('.menu-bottom__submenu'));
 bottomMenuIcon.forEach(el => el.addEventListener('click', () => {
+
     bottomMenuIconRotation.forEach(i => {
         if (bottomMenuIcon.indexOf(el) == bottomMenuIconRotation.indexOf(i)) {
             i.classList.toggle('menu-bottom__icon_rotate');
         }
     });
     bottomMenuDropDown.forEach(n => {
-        if (bottomMenuIcon.indexOf(el) == bottomMenuDropDown.indexOf(n))
-            n.classList.toggle('menu-bottom__submenu_down')
+        if (n.classList.contains("menu-bottom__submenu_down")) {
+            n.classList.remove("menu-bottom__submenu_down");
+        }
+        else if (bottomMenuIcon.indexOf(el) == bottomMenuDropDown.indexOf(n)) {
+            n.classList.add('menu-bottom__submenu_down');
+        }
     });
 }));
 
@@ -53,12 +58,4 @@ entrance.addEventListener('mousedown', () => {
     entranceIcon.classList.add('entrance__logo_active')
 });
 
-entrance.addEventListener('focus', () => {
-    entranceIconBorder.style.outline = "2px solid #7943A4";
-    entranceIconBorder.style.outlineOffset = "3px";
-});
-
-entrance.addEventListener('blur', () => {
-    entranceIconBorder.style.outline = "none";
-});
 

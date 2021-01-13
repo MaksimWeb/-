@@ -281,7 +281,7 @@ body {
 }
 
 .entrance {
-    margin: -6px 8px 0 0;
+    margin: -6px 2px 0 0;
 }
 
 .entrance-link {
@@ -374,8 +374,7 @@ body {
 }
 
 .simplebar-scrollbar::before {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 240, 8, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background: orange;
 }
 
 .header__search-block {
@@ -408,8 +407,8 @@ body {
 }
 
 .hero__container {
-    margin-top: -71px;
-    padding: 143px 0 122px 155px;
+    margin: -71px 0 0 140px;
+    padding: 143px 15px 122px 15px;
 }
 
 .hero__header, .hero__text {
