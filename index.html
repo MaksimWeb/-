@@ -7,8 +7,9 @@
   <title>Курсовая</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="css/choices.min.css">
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-
+  <script src="scripts/choices.min.js"></script>
 
   <link rel="stylesheet" href="css/style.css">
   <script defer src="scripts/main.js"></script>
@@ -242,7 +243,8 @@
     <section class="about-us">
       <div class="container about-us__container">
         <h2 class="about-us__header">О нас</h2>
-        <p class="about-us__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
+        <p class="about-us__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий
+          однозначно определяет каждого
           участника как способного принимать собственные решения касаемо распределения внутренних резервов и ресурсов.
           Не следует, однако, забывать, что высококачественный прототип будущего проекта влечет за собой процесс
           внедрения и модернизации модели развития. Повседневная практика показывает, что высокое качество позиционных
@@ -250,6 +252,24 @@
           учётом комплекса распределения внутренних резервов и ресурсов. В рамках спецификации современных стандартов,
           действия представителей оппозиции набирают популярность среди определенных слоев населения, а значит, должны
           быть разоблачены.</p>
+      </div>
+    </section>
+    <section class="gallery">
+      <div class="container gallery__container">
+        <div class="gallery-left">
+          <h2 class="gallery__header">Галерея</h2>
+          <p class="gallery__filter-text">Фильтровать по:</p>
+          <select name="filter" id="gallery__select">
+            <option value="Автор" class="gallery__option">Автор</option>
+            <option value="Направление" class="gallery__option">Направление</option>
+            <option value="Техника" class="gallery__option">Техника</option>
+          </select>
+          <p class="gallery__text">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний авторизуйтесь, либо воспользуйтесь лицензией.</p>
+        </div>
+
+        <div class="gallery-right">
+
+        </div>
       </div>
     </section>
   </main>

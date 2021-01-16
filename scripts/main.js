@@ -61,4 +61,8 @@ entrance.addEventListener('mousedown', () => {
     entranceIcon.classList.add('entrance__logo_active')
 });
 
-
+// Кастом селект
+const element = document.querySelector('#gallery__select');
+const choices = new Choices(element, {
+    searchEnabled: true
+});
