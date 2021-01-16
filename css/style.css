@@ -534,7 +534,8 @@ body {
 
 .choices__inner,
 .choices__list--dropdown, 
-.is-flipped.is-open .choices__inner, .is-flipped .choices__list--dropdown {
+.is-flipped.is-open .choices__inner, .is-flipped .choices__list--dropdown,
+.is-open .choices__inner {
     background: transparent;
     border-radius: 6px;
 }
