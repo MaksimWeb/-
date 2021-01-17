@@ -45,12 +45,12 @@
     box-sizing: border-box;
 }
 
-.nav__upper-list, .menu-bottom__list, .menu-bottom__submenu, .hero__header, .hero__text, .search, .about-us__header, .about-us__text, .gallery__header, .gallery__filter-text, .gallery__text {
+.nav__upper-list, .menu-bottom__list, .menu-bottom__submenu, .hero__header, .hero__text, .search, .about-us__header, .about-us__text, .gallery__header, .gallery__filter-text, .gallery__text, .slider__list {
     margin: 0;
     padding: 0;
 }
 
-.nav__upper-list, .menu-bottom__submenu, .menu-bottom__list, .menu-bottom__submenu li, .menu-bottom__submenu li>a, .header__logo, .nav__link, .entrance-link, .hero__link {
+.nav__upper-list, .menu-bottom__submenu, .menu-bottom__list, .menu-bottom__submenu li, .menu-bottom__submenu li>a, .header__logo, .nav__link, .entrance-link, .hero__link, .slider__list {
     text-decoration: none;
     list-style-type: none;
     outline: none;
@@ -509,6 +509,12 @@ body {
     display: flex;
     margin: 0 auto;
     padding-top: 86px;
+    padding-bottom: 78px;
+}
+
+.gallery-left {
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery__header, .gallery__filter-text {
@@ -530,18 +536,16 @@ body {
 .choices {
     color: var(--link-color);
     width: 400px;
+    margin-bottom: auto;
 }
 
-.choices__inner,
-.choices__list--dropdown, 
-.is-flipped.is-open .choices__inner, .is-flipped .choices__list--dropdown,
-.is-open .choices__inner {
+.choices__inner, .choices__list--dropdown, .is-flipped.is-open .choices__inner, .is-flipped .choices__list--dropdown, .is-open .choices__inner {
     background: transparent;
     border-radius: 6px;
 }
 
 .is-focused .choices__inner, .is-open .choices__inner {
-    border-color:  var(--link-color);
+    border-color: var(--link-color);
 }
 
 .choices__inner {
@@ -551,15 +555,25 @@ body {
 }
 
 .choices[data-type*=select-one]::after {
-    content:'';
-    display: block;
-    position: absolute;
-    top: 50%;
-    width: 7.07px;
-    height: 7.07px;
+    content: '';
+    border: none;
     border-left: 1px solid var(--link-color);
     border-bottom: 1px solid var(--link-color);
+    border-width: 1px;
+    border-color: var(--link-color);
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    right: 15.5px;
+    top: 40%;
     transform: rotate(-45deg);
+    pointer-events: none;
+}
+
+.choices[data-type*=select-one].is-open:after {
+    border-color: var(--link-color);
+    margin-top: 0;
+    transform: rotate(135deg);
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
@@ -580,15 +594,90 @@ body {
 
 .gallery__text {
     font-size: 16px;
+    font-weight: 400;
     color: var(--link-color);
-    max-width: 401px;
+    max-width: 386px;
+    line-height: 1.9;
+    word-spacing: 2px;
 }
 
 .gallery__span {
     color: var(--hover);
 }
 
-.slider {
-    width: 600px;
-    height: 600px;
+.gallery-right {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 10px;
+    padding-left: 50px;
+    overflow: hidden;
+}
+
+/* слайдер */
+
+.slider__container {
+    overflow: hidden;
+}
+
+.slider__track {
+    display: flex;
+    transition: .2s;
+}
+
+.slider__buttons {
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    margin-bottom: 19px;
+}
+
+.slider__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 47px;
+    column-gap: 50px;
+}
+
+.slider-pag {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--link-color);
+    letter-spacing: 5px;
+    margin-right: 11px;
+}
+
+.btn-prev, .btn-next {
+    background: transparent;
+    border: none;
+    padding: 3px;
+}
+
+.btn-prev:focus, .btn-next:focus {
+    outline: none;
+}
+
+.btn-next:hover svg .svg-circle, .btn-prev:hover svg .svg-circle {
+    fill: var(--active);
+    cursor: pointer;
+}
+
+.btn-next:active svg .svg-circle, .btn-prev:active svg .svg-circle {
+    fill: var(--dark-active);
+    cursor: pointer;
+}
+
+.btn-next:focus svg .svg-pag, .btn-prev:focus svg .svg-pag {
+    stroke: var(--dark-active);
+}
+
+.btn-next:active svg .svg-pag, .btn-prev:active svg .svg-pag {
+    stroke: #D1A9F0;
+}
+
+.btn-prev {
+    margin-right: 14px;
+}
+
+.slider__list-item {
+    max-width: 350px;
 }

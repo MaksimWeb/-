@@ -257,7 +257,6 @@
     <section class="gallery">
       <div class="container gallery__container">
         <div class="gallery-left">
-
           <h2 class="gallery__header">Галерея</h2>
           <p class="gallery__filter-text">Фильтровать по:</p>
           <select name="filter" id="gallery__select">
@@ -266,11 +265,69 @@
             <option value="Техника" class="gallery__option">Техника</option>
           </select>
           <p class="gallery__text">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-            <span class="gallery__span">авторизуйтесь</span>, либо воспользуйтесь лицензией.</p>
+            <span class="gallery__span">авторизуйтесь</span>, либо воспользуйтесь лицензией.
+          </p>
         </div>
 
         <div class="gallery-right">
-          <div class="slider"></div>
+          <div class="slider__container">
+            <div class="slider__track">
+              <div class="slider__item">
+                <ul class="slider__list">
+                  <li class="slider__list-item"><img src="img/slider 1/Rectangle 70.jpg" alt="Первая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 1/Rectangle 69.jpg" alt="Вторая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 1/Rectangle 68.jpg" alt="Третья картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 1/Rectangle 72.jpg" alt="Четвертая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 1/Rectangle 73.jpg" alt="Пятая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 1/Rectangle 71.jpg" alt="Шестая картинка"></li>
+                </ul>
+              </div>
+              <div class="slider__item">
+                <ul class="slider__list">
+                  <li class="slider__list-item"><img src="img/slider 2/Rectangle 70.jpg" alt="Первая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 2/Rectangle 68.jpg" alt="Вторая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 2/Rectangle 69.jpg" alt="Третья картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 2/Rectangle 72.jpg" alt="Четвертая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 2/Rectangle 71.jpg" alt="Пятая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 2/Rectangle 73.jpg" alt="Шестая картинка"></li>
+                </ul>
+              </div>
+              <div class="slider__item">
+                <ul class="slider__list">
+                  <li class="slider__list-item"><img src="img/slider 3/Rectangle 77.jpg" alt="Первая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 3/Rectangle 74.jpg" alt="Вторая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 3/Rectangle 79.jpg" alt="Третья картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 3/Rectangle 78.jpg" alt="Четвертая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 3/Rectangle 75.jpg" alt="Пятая картинка"></li>
+                  <li class="slider__list-item"><img src="img/slider 3/Rectangle 76.jpg" alt="Шестая картинка"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="slider__buttons">
+            <button class="btn-prev">
+              <svg class="btn-icon" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="svg-circle"
+                  d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
+                  fill="#666666" />
+                <path class="svg-pag"
+                  d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
+                  stroke="black" />
+                <path d="M16 20L11 15L16 10" stroke="white" />
+              </svg></button>
+            <p class="slider-pag"></p>
+            <button class="btn-next">
+              <svg class="btn-icon" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="svg-circle"
+                  d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
+                  fill="#666666" />
+                <path class="svg-pag"
+                  d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
+                  stroke="black" />
+                <path d="M14 20L19 15L14 10" stroke="white" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
