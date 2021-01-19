@@ -124,3 +124,24 @@ const checkBtns = () => {
 };
 
 checkBtns();
+
+// Галерея
+
+const sliderListItem = [...document.querySelectorAll('.slider__list-item')];
+sliderListItem.forEach(el => el.addEventListener('mousedown', () => {
+    for (item in sliderListItem) {
+        if (sliderListItem[item] === el) {
+            sliderListItem[item].classList.add('click');
+            sliderListItem[item].style.border = "2px solid #D1A9F0";
+        };
+    };
+}));
+
+sliderListItem.forEach(el => el.addEventListener('mouseup', () => {
+    for (item in sliderListItem) {
+        if (sliderListItem[item] === el) {
+            sliderListItem[item].classList.remove('click');
+            sliderListItem[item].style.border = "none";
+        };
+    };
+}));

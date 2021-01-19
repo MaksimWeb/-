@@ -679,5 +679,41 @@ body {
 }
 
 .slider__list-item {
+    position: relative;
     max-width: 350px;
+}
+
+.slider__list-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.slider__list-item::before {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.slider__list-item_hover {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.click.slider__list-item::before {
+    opacity: 1;
+}
+
+.slider__list-item:hover .slider__list-item_hover {
+    opacity: 1;
+    cursor: pointer;
 }
