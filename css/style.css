@@ -50,7 +50,7 @@
     padding: 0;
 }
 
-.nav__upper-list, .menu-bottom__submenu, .menu-bottom__list, .menu-bottom__submenu li, .menu-bottom__submenu li>a, .header__logo, .nav__link, .entrance-link, .hero__link, .slider__list {
+.nav__upper-list, .menu-bottom__submenu, .menu-bottom__list, .menu-bottom__submenu li, .menu-bottom__submenu li>a, .header__logo, .nav__link, .entrance-link, .hero__link, .slider__list, .gallery__span {
     text-decoration: none;
     list-style-type: none;
     outline: none;
@@ -584,6 +584,10 @@ body {
     border-color: #999;
 }
 
+.choices__list--dropdown {
+    transition: visibility 1s ease-in;
+}
+
 .choices__list--dropdown .choices__item:not(:last-child) {
     border-bottom: 1px solid #999;
 }
@@ -658,11 +662,13 @@ body {
 
 .btn-next:hover svg .svg-circle, .btn-prev:hover svg .svg-circle {
     fill: var(--active);
+    transition: .2s linear;
     cursor: pointer;
 }
 
 .btn-next:active svg .svg-circle, .btn-prev:active svg .svg-circle {
     fill: var(--dark-active);
+    transition: .2s linear;
     cursor: pointer;
 }
 
