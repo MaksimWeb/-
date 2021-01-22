@@ -145,3 +145,48 @@ sliderListItem.forEach(el => el.addEventListener('mouseup', () => {
         };
     };
 }));
+
+// Каталог
+
+const imgList = [...document.getElementsByClassName("catalog__img")];
+
+
+imgList.forEach(img => {
+    img.addEventListener('mousedown', () => {
+        img.classList.add('catalog__list-item_mousedown');
+    });
+});
+
+imgList.forEach(img => {
+    img.addEventListener('mouseup', () => {
+        img.classList.remove('catalog__list-item_mousedown');
+
+        for (let i in imgList) {
+            if (imgList[i].classList.contains('catalog__list-item_mouseup')) {
+                imgList[i].classList.remove('catalog__list-item_mouseup');
+            }
+            else if (imgList.indexOf(img) === imgList.indexOf(imgList[i])) {
+                imgList[i].classList.add('catalog__list-item_mouseup');
+            }
+        };
+    });
+});
+
+// Аккордеон
+
+document.querySelectorAll('.accordion-item__trigger').forEach((item) =>
+    item.addEventListener('click', () => {
+        const parent = item.parentNode;
+
+        if (parent.classList.contains('accordion-item--active')) {
+            parent.classList.remove('accordion-item--active');
+        }
+        else {
+            document.querySelectorAll('.accordion-item').forEach((child) =>
+                child.classList.remove('accordion-item--active')
+            );
+            parent.classList.add('accordion-item--active');
+        }
+
+    })
+);
