@@ -734,13 +734,13 @@ button {
 
 .catalog__container {
     margin: 0 auto;
-    padding-top: 86px;
+    padding-top: 75px;
 }
 
 .catalog__tabs {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .catalog__header, .catalog__text {
@@ -750,7 +750,7 @@ button {
 
 .catalog__header {
     font-size: 48px;
-    margin-right: 40px;
+    margin-right: 26px;
 }
 
 .catalog__text {
@@ -762,7 +762,7 @@ button {
 .catalog__list {
     display: flex;
     align-items: center;
-    column-gap: 50px;
+    column-gap: 22px;
 }
 
 .catalog__list-item:hover img {
@@ -770,8 +770,12 @@ button {
     cursor: pointer;
 }
 
-.catalog__img {
-    border: none;
+.catalog__list-item, .catalog__img {
+    border: 2px solid transparent;
+}
+
+.catalog__list-item {
+    padding: 10px;
     transition: .2s ease-in;
 }
 
@@ -784,7 +788,6 @@ button {
 .catalog__list-item_mouseup {
     border: 2px solid var(--active);
     border-radius: 33px;
-    padding: 10px;
     filter: none !important;
 }
 

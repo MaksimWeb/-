@@ -148,6 +148,8 @@ sliderListItem.forEach(el => el.addEventListener('mouseup', () => {
 
 // Каталог
 
+const itemList = [...document.getElementsByClassName("catalog__list-item")];
+
 const imgList = [...document.getElementsByClassName("catalog__img")];
 
 
@@ -160,13 +162,17 @@ imgList.forEach(img => {
 imgList.forEach(img => {
     img.addEventListener('mouseup', () => {
         img.classList.remove('catalog__list-item_mousedown');
+    });
+});
 
-        for (let i in imgList) {
-            if (imgList[i].classList.contains('catalog__list-item_mouseup')) {
-                imgList[i].classList.remove('catalog__list-item_mouseup');
+itemList.forEach(item => {
+    item.addEventListener('mouseup', () => {
+        for (let i in itemList) {
+            if (itemList[i].classList.contains('catalog__list-item_mouseup')) {
+                itemList[i].classList.remove('catalog__list-item_mouseup');
             }
-            else if (imgList.indexOf(img) === imgList.indexOf(imgList[i])) {
-                imgList[i].classList.add('catalog__list-item_mouseup');
+            else if (itemList.indexOf(item) === itemList.indexOf(itemList[i])) {
+                itemList[i].classList.add('catalog__list-item_mouseup');
             }
         };
     });
