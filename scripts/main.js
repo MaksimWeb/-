@@ -173,10 +173,22 @@ imgList.forEach(img => {
 });
 
 // Аккордеон
+const accordionIcon = [...document.querySelectorAll('.accordion__svg')];
+const accordionTrigger = [...document.querySelectorAll('.accordion-item__trigger')];
 
-document.querySelectorAll('.accordion-item__trigger').forEach((item) =>
+accordionTrigger.forEach((item) =>
     item.addEventListener('click', () => {
         const parent = item.parentNode;
+
+        for (let icon in accordionIcon) {
+            if (accordionIcon[icon].classList.contains('accordion__arrow_rotate')) {
+                accordionIcon[icon].classList.remove('accordion__arrow_rotate')
+            }
+            else if (accordionIcon.indexOf(accordionIcon[icon]) === accordionTrigger.indexOf(item)) {
+                accordionIcon[icon].classList.add('accordion__arrow_rotate');
+            }
+        };
+
 
         if (parent.classList.contains('accordion-item--active')) {
             parent.classList.remove('accordion-item--active');
@@ -187,6 +199,5 @@ document.querySelectorAll('.accordion-item__trigger').forEach((item) =>
             );
             parent.classList.add('accordion-item--active');
         }
-
     })
 );

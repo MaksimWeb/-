@@ -590,7 +590,8 @@ button {
 }
 
 .choices__list--dropdown {
-    transition: visibility 1s ease-in;
+    opacity: 0;
+    transition: 1s ease;
 }
 
 .choices__list--dropdown .choices__item:not(:last-child) {
@@ -769,6 +770,11 @@ button {
     cursor: pointer;
 }
 
+.catalog__img {
+    border: none;
+    transition: .2s ease-in;
+}
+
 .catalog__list-item_mousedown {
     border: 2px solid var(--active);
     border-radius: 23px;
@@ -780,36 +786,90 @@ button {
     border-radius: 33px;
     padding: 10px;
     filter: none !important;
-    transition: .2s ease-in;
 }
 
 .catalog__button:focus {
     outline: none;
 }
 
+.catalog__bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .catalog__left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 50%;
+    height: 50%;
 }
 
 .catalog__right {
     margin: 0 auto;
 }
 
-.accordion-item--active .accordion-item__content {
-    display: block;
+.accordion, .accordion-item__trigger {
+    position: relative;
 }
+
+.accordion-item--active .accordion-item__content {
+    height: auto;
+    padding: 25px 0 38px 0;
+    border-top: 1px solid var(--active);
+    border-bottom: 1px solid var(--active);
+}
+
+.accordion-item--active .accordion-item__trigger {
+    border-bottom: none;
+}
+
 .accordion-item {
+    position: relative;
     margin-bottom: 20px;
 }
+
 .accordion-item__trigger {
-    padding: 20px;
-    border: 1px solid black;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 38px 0 44px 0;
+    border: none;
+    border-bottom: 1px solid #CACACA;
+    cursor: pointer;
+    transition: .4s;
 }
+
+.accordion-item:first-child .accordion-item__trigger {
+    border-top: 1px solid #CACACA;
+}
+
 .accordion-item__content {
-    display: none;
-    padding: 20px;
-    border: 1px solid black;
-    border-top: none;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    border: none;
+    transition: .5s;
 }
+
+.accordion__svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    
+}
+
+.accordion__svg-stroke {
+    stroke: none;
+}
+
+.accordion__arrow_rotate {
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
